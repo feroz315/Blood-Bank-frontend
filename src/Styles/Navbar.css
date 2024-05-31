@@ -1,0 +1,705 @@
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    background: #C40C0C;
+    z-index: var(--z-fixed);
+   }
+   .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+   }
+   .nav__logo {
+    color: var(--first-color);
+    transition: color 0.4s;
+    font-size: var(--h2-font-size);
+    font-family: var(--second-font);
+    color: #fff;
+   }
+   .nav__toggle,
+   .nav__close {
+    font-size: 1.5rem;
+    color: var(--title-color);
+    cursor: pointer;
+   }
+   .nav__cta {
+    color: var(--title-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 0.75rem 1.5rem;
+    
+   }
+   .nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+  }
+   .nav__link {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    transition: color 0.4s;
+    color: #fff;
+    text-decoration: none;
+   }
+   
+   .nav__link:hover {
+    color: black;
+   }
+   
+   .nav__close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+   }
+   
+   .show-menu {
+    right: 0;
+ }
+
+.Cards{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.Cards > span > P{
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'apercu';   
+}
+.donor{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 50px;
+  
+}
+.donor_Img{
+  width: 25%;
+  border-radius: 10px;
+}
+.search{
+  margin-top: 50px; 
+}
+.search_Input{
+border-radius: 5px;
+width: 20%;
+height: 40px;
+border-color: #000;
+border-width: 2px;
+}
+.search-btn{
+border-radius: 5px;
+width: 6%; 
+height: 40px;
+margin-left: 3px;
+}
+.search-btn:hover{
+  background-color: #C40C0C;
+  transition: 0.4s;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.container-footer{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+background: #C40C0C;
+margin-top: 80px;
+
+}
+
+.footer_text{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.list_text{
+cursor: pointer;
+line-height: 2rem;
+margin: 10px;
+
+}
+.name_list > li{
+  color: #fff;
+  font-size: 1.0rem;
+  font-weight:bold;
+  font-style: normal;
+  font-family:'Courier New', Courier, monospace;
+  margin:5px
+}
+.links  {
+display: flex;
+flex-direction: row;
+justify-content:flex-end;
+align-items: center;
+margin-right: 20px;
+}
+.name_list > li:hover{
+  color: #000;
+}
+.social:hover{
+  background: #fff;
+  border-radius: 15px;
+}
+.social{
+  width: 6%;
+  cursor: pointer; 
+}
+/* Donor page*/
+
+.container_form > h3{
+  color: #C40C0C;
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  
+}
+.container_form > img{
+  margin-top: 60px;
+  height: 300px;
+}
+
+label {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+sup {
+  color: red;
+  top: -2px;
+  font-size: 95%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+button {
+  padding: 12px;
+  width: 140px;
+  border-radius: 20px;
+  color: black;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+button:hover{
+  background-color: #C40C0C;
+  color: #fff;
+  transition: 0.5s;
+  
+}
+
+.User_Information{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input{
+  width: 25%;
+  height: 38px;
+  border-radius: 5px;
+  margin: 5px;
+}
+.select {
+  border-radius: 4px;
+  border: 1px solid #acacac;
+  height: 32px;
+  padding: 0 8px;
+  margin-top: 20px;
+}
+.radio_btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin-top: 20px;
+}
+.radio_btn > p{
+  margin-left: 20px;
+}
+.radio_btn > input {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.text-card {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+
+}
+
+.text-card > img {
+margin-top: 25px;
+height: 40%;
+width: 30%;
+}
+.continer-about > p {
+font-size: 0.9rem;
+font-weight: 600;
+margin-top: 15px;
+font-family:Verdana,Tahoma, sans-serif;
+}
+
+.contact-heading{
+margin-top: 100px;
+}
+
+.contact-heading > h3{
+  font-size: 2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  color:#000;
+}
+
+.contact-heading > small{
+  font-size: 1rem;
+  color: #096aa1;
+  font-weight:600; 
+}
+
+.ContactForm{
+  /* background: #000; */
+  /* height: 130px; */
+  margin-top: 100px;
+}
+
+.maps {
+  height: 100vh;
+  width: 100vw;
+  margin-top: 50px;
+}
+.map-container {
+  height: 100%;
+  width: 100%;
+}
+
+.services-content{
+display: flex;
+flex-direction: row;
+justify-content:center;
+align-items: center;
+margin-top: 30px;
+}
+
+.test-simple{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.test{
+  height: 20vh;
+  width: 43%;
+  margin-bottom: 10px; 
+  border-radius: 100%;
+  border: 4px solid #67b34c;
+  transition: all .4s ease-in-out;
+}
+
+.test:hover{
+  border-color: #096aa1;
+  cursor: pointer;
+}
+
+.test-simple > small{
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'futurak';
+  font-style: normal;
+}
+.silder-Img > h4{
+margin-top: 70px;
+color: #096aa1;
+font-size: 1.8rem;
+font-weight: 500;
+font-family: 'futurak';
+font-style: normal;
+}
+.carousel{
+margin-top: 40px;
+
+}
+.carousel-Img{
+  width: 80%;
+  height: 35vh;
+  border-radius: 10px;
+}
+.container-form{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+}
+.form-Img{
+width: 60%;
+height: 60vh;
+margin-top: 50px;
+border-radius: 10px;
+
+}
+
+
+@media screen and (max-width: 1150px) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: hsla(0, 0%, 6%, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    width: 80%;
+    height: 100%;
+    padding: 6rem 3rem 0;
+    transition: right 0.4s;
+  }
+  
+}
+
+@media screen and (min-width: 1150px) {
+  .nav {
+    height: calc(var(--header-height) + 1rem);
+  }
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+ 
+  .nav__list {
+    flex-direction: row;
+    column-gap: 2.5rem;
+  }
+  
+}
+ 
+@media screen and (max-width:992px ){
+  .nav-silder{
+      width: 80%;
+  }
+  .card_Img{
+      width: 35%;
+  }
+  .para{
+    font-size: 0.58rem;
+    font-weight: 600;
+  }
+  
+  .search >.search_Input{
+    width:30%;
+
+  }
+  .search >.search-btn{
+    width: 10%;
+  }
+  .links >.social{
+    width: 12%;
+  }
+  .container_form > img{
+    margin-top: 60px;
+    height: 300px;
+  }
+  input{
+    width: 35%;
+    height: 38px;
+    border-radius: 5px;
+    margin: 5px;
+}
+  .continer-about >.about_Img{  
+    width:100%;
+    height: 45vh;
+}
+  .continer-about > p {
+    font-size: 0.8rem;
+    font-weight:500;
+    font-style: normal;
+}
+
+ .maps {
+  height: 80vh;
+  width: 100%;
+  margin-top: 50px;
+}
+.map-container {
+  height: 100%;
+  width: 100%;
+}
+.services>.services-Img{
+  width: 100%;
+  height: 50vh; 
+}
+.test-simple >.test{
+width: 40%;
+height: 18vh;
+}
+.test-simple >small{
+  font-size: 1rem;
+}
+.silder-Img>h4{
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-style: normal;
+}
+.carousel-Img{
+  width: 80%;
+}
+  
+}
+
+@media screen and (max-width:768px ){
+  .nav-silder{
+      width: 75%;
+  }
+  .card_Img{
+      width: 30%;
+  }
+  .para{
+    font-size: 0.56rem;
+    font-weight: 600;
+  }
+  
+.search >.search_Input{
+  width:45%;
+  
+}
+.search >.search-btn{
+  width: 15%;
+}
+.links >.social{
+  width: 15%;
+  
+}
+.list_text >.name_list>li {
+  font-size: 0.9rem;
+}
+.container_form > img{
+  margin-top: 60px;
+  height: 300px;
+}
+.container_form >.userheading{
+  font-size: 2.1rem;
+  font-weight: 500;
+  font-family: 'futurak';
+  font-style: normal;
+}
+input{
+  width: 30%;
+  height: 38px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+button{
+  height: 7vh;
+  width: 15%; 
+}
+.continer-about >.about_Img{  
+  width:100%;
+  height: 35vh;
+}
+.continer-about > p {
+  font-size: 0.6rem;
+  font-weight:400;
+  font-style: normal;
+}
+.text-card >.card{
+  width: 35%;
+  height: 30vh;
+}
+.contact-heading > h3{
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-style: normal;
+}
+.contact-heading >small{
+ font-size: 0.9rem;
+}
+.maps {
+height: 60vh;
+width: 100%;
+margin-top: 50px;
+}
+.map-container {
+height: 100%;
+width: 100%;
+}
+
+.services>.services-Img{
+  width: 100%;
+  height: 40vh; 
+}
+.test-simple >.test{
+width: 35%;
+height: 15vh;
+}
+.test-simple >small{
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.silder-Img>h4{
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.carousel-Img{
+  width: 50%;
+  height: 30vh;
+}
+ 
+}
+
+@media screen and (max-width:576px) {
+  .nav-silder{
+    width: 65%;  
+  }
+  .card_Img{
+    width: 30%;
+  }
+.para{
+  font-size: 0.55rem;
+  font-weight: 600;
+}
+.donor > .donor_Img{
+  display: flex;
+  flex-direction: column;
+  width:28%;
+  background: #000;
+}
+.search >.search_Input{
+  width:40%;
+ }
+.search >.search-btn{
+  width: 15%;
+}
+.list_list > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.2rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+.links >.social{
+  width: 25%;
+}
+.footer_text >.list_text>ul>li{
+  font-size: 0.7rem;
+  font-family: 'Courier New', Courier, monospace;   
+}    
+.container_form > img{
+  margin-top: 60px;
+  height: 220px;
+}
+.container_form >.userheading{
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-family: 'futurak';
+  font-style: normal;
+}
+input{
+  width: 35%;
+  height: 30px;
+  border-radius: 5px;
+}
+.select{
+  width: 20%;
+  height: 30px;
+}
+button{
+  width: 15%;
+}
+
+.continer-about >.about_Img{  
+  width:100%;
+  height: 30vh;
+}
+.continer-about > p {
+  font-size: 0.5rem;
+  color: #000;
+  font-weight:400;
+  font-style: normal;
+}
+.text-card >.card{
+  width: 35%;
+  height: 30vh;
+}
+
+.text-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-heading > h3{
+  font-size: 1.3rem;
+  font-weight: 500px;
+  font-style: normal;
+}
+
+.contact-heading > small{
+  font-size:0.8rem;
+}
+
+.maps {
+height: 40vh;
+width: 100%;
+margin-top: 50px;
+}
+
+.map-container {
+height: 100%;
+width: 100%;
+}
+
+.services>.services-Img{
+  width: 100%;
+  height: 30vh; 
+}
+.test-simple >.test{
+  width: 35%;
+  height: 12vh;
+}
+.test-simple >small{
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-style: normal;
+}
+.silder-Img>h4{
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-style: normal;
+}
+/* .carousel{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+.carousel-Img{
+  width: 50%;
+  height: 30vh;
+}
+
+
+}
