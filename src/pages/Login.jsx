@@ -12,7 +12,10 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { NavLink } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Toast } from '../utilis/Toast';
+import axios from 'axios';
+
 
 
 // TODO remove, this demo shouldn't need to reset the theme.
@@ -21,15 +24,44 @@ const defaultTheme = createTheme();
 
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
 
+const [ email,setEmail ] = ussState('');
+const [ password,setPassword ] = ussState('');
+
+const navigate = useNavigate();
+
+
+ const handleSubmit = async(event) => {
+  try {
+        event.preventDefault();
+        console.log( email,password )   
+    
+      const obj = {
+        email,
+        password,
+    }
+
+    const respone = await axios.post(`${BASE_URL}/login`,obj)
+     console.log("respone", respone);
+     if(respone.data.status){
+      Toast(respone.data.message, "success")
+
+      localStorage.setItem("userdata" , JSON.stringify(respone.data.data))
+      localStorage.setItem("token", respone.data.token)
+       
+      navigate("/")
+     
+    }else{
+      Toast(respone.data.message, "error")
+    }
+  } catch (error) {
+    console.log("error",error)
+    Toast(error?.response?.data?.message || error.message, "error");
+
+    
+  }
+}
+ 
   return (
     <>
     <div className='container'>
@@ -61,6 +93,8 @@ export default function SignIn() {
               label="Email Address"
               name="email"
               autoComplete="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               autoFocus
             />
             <TextField
@@ -71,6 +105,8 @@ export default function SignIn() {
               label="Password"
               type="password"
               id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"
             />
             <Button
@@ -88,9 +124,9 @@ export default function SignIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <NavLink to="/signup" variant="body2">
+                <Link to="/signup" variant="body2">
                   {"Don't have an account? Sign Up"}
-                </NavLink>
+                </Link>
               </Grid>
             </Grid>
           </Box>

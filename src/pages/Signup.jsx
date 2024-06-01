@@ -10,7 +10,9 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { NavLink } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Toast } from '../utilis/Toast';
+
 
 
 
@@ -32,14 +34,41 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignUp() {
-  const handleSubmit = (event) => {
+
+  const [ email,setEmail ] = useState('');
+  const [ password,setPassword ] = useState('');
+  const [ firstname,setFirstname ] = useState('');
+  const [ lastname,setLastname ] = useState('');
+  
+  const navigate = useNavigate();
+
+
+  const handleSubmit = async(event) => {
+try {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    console.log(email,password,firstname,lastname) 
+
+  const obj = {
+    email,
+    password,
+    firstname,
+    lastname
   };
+     
+  const respone = await axios.post(`${BASE_URL}/signup`, obj);
+  console.log("respone", respone)
+  if(respone.data.status){
+    Toast(respone.data.message, "success")
+    navigate("/login")
+  }else{
+    Toast(respone.data.message, "error")
+  }
+
+} catch (error) {
+  Toast(error.message, "error")
+}
+
+ };
 
   return (
     <>
@@ -65,6 +94,7 @@ export default function SignUp() {
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
+
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
@@ -73,6 +103,8 @@ export default function SignUp() {
                   fullWidth
                   id="firstName"
                   label="First Name"
+                  value={firstname}
+                  onChange={(e) => setFirstname(e.target.value)}
                   autoFocus
                 />
               </Grid>
@@ -84,12 +116,13 @@ export default function SignUp() {
                   id="lastName"
                   label="Last Name"
                   name="lastName"
+                  value={lastname}
+                  onChange={(e) =>setLastname(e.target.value)}
                   autoComplete="family-name"
                 />
               </Grid>
-
          
-            <Grid item xs={12}>
+              <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
@@ -97,6 +130,8 @@ export default function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </Grid>
               
@@ -108,6 +143,8 @@ export default function SignUp() {
                   label="Password"
                   type="password"
                   id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   autoComplete="new-password"
                 />
               </Grid>
@@ -123,9 +160,9 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <NavLink to="/signin" variant="body2">
+                <Link to="/signin" variant="body2">
                   Already have an account? Sign in
-                </NavLink>
+                </Link>
               </Grid>
             </Grid>
           </Box>

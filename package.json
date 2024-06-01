@@ -17,7 +17,7 @@
     "@mui/material": "^5.15.16",
     "@react-google-maps/api": "^2.19.3",
     "@reduxjs/toolkit": "^2.2.3",
-    "axios": "^1.6.8",
+    "axios": "^1.7.2",
     "better-react-carousel": "^1.1.2",
     "bootstrap": "^5.3.3",
     "google-map-react": "^2.2.1",
